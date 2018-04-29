@@ -1,0 +1,27 @@
+{
+  "name": "FriendFinder",
+  "version": "1.0.0",
+  "description": "Friend Finder is a full-stack web application hosted on Heroku that allows users to find compatible friends based on a simple 10-question survey.",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/warnerjc/FriendFinder.git"
+  },
+  "keywords": [],
+  "author": "Jason Warner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/warnerjc/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/warnerjc/FriendFinder#readme"
+}
