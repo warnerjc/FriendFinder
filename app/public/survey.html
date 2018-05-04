@@ -24,7 +24,7 @@
 
                 <p class="lead">Name (Required)</p>
                 <input type="text" id="name" class="required" required>
-            
+
                 <p class="lead">Link to Photo Image (Required)</p>
                 <input type="text" id="photo" class="required" required>
 
@@ -110,7 +110,9 @@
                     <option value="5">5 (Strongly Agree)</option>
                 </select>
 
-                <p class="lead">You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</p>
+                <p class="lead">You think that everyone’s views should be respected regardless of whether they are supported by facts or
+                    not.
+                </p>
                 <select class="custom-select" id="q9">
                     <option selected value="">Select Your Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
@@ -135,6 +137,31 @@
             </div>
         </div>
     </main>
+
+    <!-- https://friend-finder-fsf.herokuapp.com/survey -->
+    <!-- Modal -->
+    <div id="results-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Friend Matched</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h2 id="match-name"></h2>
+                    <img id="match-img" src="https://picsum.photos/200/300/?random" alt="">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default close" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
     <footer class="footer">
         <div class="container">
@@ -167,13 +194,13 @@
 
                 var isValid = true;
 
-                $(".required").each( function() {
+                $(".required").each(function () {
                     if ($(this).val() === "") {
                         isValid = false;
                     }
                 });
 
-                $(".custom-select").each( function () {
+                $(".custom-select").each(function () {
                     if ($(this).val() === "") {
                         isValid = false;
                     }
@@ -207,8 +234,8 @@
                 $.post("/api/friends", userData, function (data) {
 
                     // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-                    $("#match-name").text(data.name);
-                    $("#match-img").attr("src", data.photo);
+                    $("#match-name").text(data.matchName);
+                    $("#match-img").attr("src", data.matchImage);
 
                     // Show the modal with the best match
                     $("#results-modal").modal("toggle");
