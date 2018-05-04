@@ -4,3 +4,12 @@ body {
     background-attachment: fixed;
     background-size:100% auto;
 }
+
+.jumbotron {
+    margin-top: 5vh;
+    opacity: 0.8;
+}
+
+.link-color {
+    color: #e9ecef;
+}
