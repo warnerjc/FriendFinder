@@ -13,3 +13,13 @@ body {
 .link-color {
     color: #e9ecef;
 }
+
+.custom-select {
+    width: fit-content;
+    margin-bottom: 18px;
+}
+
+.required {
+    width: 80%;
+    margin-bottom: 18px;
+}
