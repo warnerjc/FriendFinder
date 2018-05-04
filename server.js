@@ -1,7 +1,7 @@
 // Dependencies
-const express = require("express");
-const bodyParser = require("body-parser");
-const path = require("path");
+const express = require('express');
+const bodyParser = require('body-parser');
+const path = require('path');
 
 // Sets up the Express App
 const app = express();
@@ -11,10 +11,12 @@ const PORT = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+// Sets up the Express app to load static files in the public folder
+app.use(express.static('./app/public'));
+
 // Require the application routes with a reference to app (i.e. the express() package)
 require(path.join(__dirname, './app/routing/apiRoutes'))(app);
 require(path.join(__dirname, './app/routing/htmlRoutes'))(app);
-
 
 // Start listening on PORT
 app.listen(PORT, function () {
