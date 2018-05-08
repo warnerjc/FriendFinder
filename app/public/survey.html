@@ -244,6 +244,11 @@
             } else {
                 alert("Please fill out all fields before submitting!");
             }
+
+            // on hide, go to home page
+            $("#results-modal").on("hidden.bs.modal", () => {
+                window.location = "/";
+            });
         });
     </script>
 
